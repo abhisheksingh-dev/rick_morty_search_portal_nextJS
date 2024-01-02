@@ -18,10 +18,10 @@ const Home_characters = () => {
     const loadCharacters = async () => {
         setLoading(true)
         var res = await GetTopCharacters()
-        if (res !== null) {
+        if (res !== null && res.length !== 0) {
             setCharacters(res)
+            setLoading(false)
         }
-        setLoading(false)
     }
 
     return (
